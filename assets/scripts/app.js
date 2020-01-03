@@ -21,6 +21,12 @@ const index = () => {
   });
 };
 
+const getBook = () => {
+  index()
+    .then(res => console.log(res))
+    .catch(err => console.warn(err));
+};
+
 $(() => {
-  $("#get-book").on("submit", getBook);
+  $("#get-book").on("click", getBook);
 });
