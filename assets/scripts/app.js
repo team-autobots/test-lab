@@ -5,6 +5,11 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+
+const conflict = (req, res) => {
+  return console.log('this is a conflict')
+}
+
 const getBook = index()
   .then(res => console.log(res))
   .catch(err => console.warn(err));
