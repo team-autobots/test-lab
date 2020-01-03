@@ -5,9 +5,6 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const getBook = index()
-  .then(res => console.log(res))
-  .catch(err => console.warn(err));
 
 const index = () => {
   return $.ajax({
@@ -16,6 +13,12 @@ const index = () => {
   });
 };
 
+const getBook = () => {
+  index()
+    .then(res => console.log(res))
+    .catch(err => console.warn(err));
+};
+
 $(() => {
-  $("#get-book").on("submit", getBook);
+  $("#get-book").on("click", getBook);
 });
